@@ -1,0 +1,35 @@
+<div class=" row m-4 justify-content-center">
+
+
+
+    <div class="col-md-12 d-flex flex-row justify-content-center">
+
+        <div class="card me-3" style="height: 100vh; width: 80px;">
+
+            <div class="card-body p-3">
+
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <button [routerLink]="['/home/cliente']" class="btn btn-clear btn-icon btn-primary  my-2"> <i
+                            class="fa-sharp fa-solid fa-user-tie fs-2"></i></button>
+                    <button [routerLink]="['/home/fornecedor']" class="btn btn-clear btn-icon btn-primary  my-2"> <i
+                            class="fa-regular fa-user-robot fs-2"></i></button>
+                    <button class="btn btn-clear btn-icon btn-primary  my-2"> <i
+                            class="fa-sharp fa-solid fa-user-tie fs-2"></i></button>
+                    <button class="btn btn-clear btn-icon btn-primary  my-2"> <i
+                            class="fa-solid fa-taxi fs-2"></i></button>
+                    <button class="btn btn-clear btn-icon btn-primary  my-2"> <i
+                            class="fa-solid fa-pen-ruler fs-2"></i></button>
+                    <button class="btn btn-clear btn-icon btn-primary  my-2"> <i
+                            class="fa-solid fa-eraser fs-2"></i></button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="card p-5" style="width: 100%; ">
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+
+</div>

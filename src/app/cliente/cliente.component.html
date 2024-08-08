@@ -1,0 +1,50 @@
+
+<div class="card">
+     
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <form #formCliente="ngForm"  class="row  gx-2 gy-1">
+      
+        
+        <div class="col-md-3">
+            <label class="form-label fw-bolder">CPF/CNPJ<span class="text-danger fw-bolder">*</span>:</label>
+            
+              <input type="text" mask="000.000.000-00" [dropSpecialCharacters]="false" #xxxx="ngModel" name="xxxx"  [(ngModel)]="cliente.cpfcnpj"
+                class="form-control" [class.is-invalid]="xxxx.invalid && xxxx.dirty"  required>
+                
+            
+        </div>
+
+
+        <div class="col-md-8">
+            <label class="form-label fw-bolder">Nome<span class="text-danger fw-bolder">*</span>:</label>
+            
+              <input type="text"  #nome="ngModel"  name="nome" [(ngModel)]="cliente.nome"
+                class="form-control" [class.is-invalid]="nome.invalid && nome.dirty" maxlength="80" required>
+              
+            
+        </div>
+
+        <div class="col-md-8">
+            <label class="form-label fw-bolder">Salario<span class="text-danger fw-bolder">*</span>:</label>
+            
+              <input type="text" currencyMask #salario="ngModel"  name="salario" [(ngModel)]="cliente.salario"
+                class="form-control" [class.is-invalid]="salario.invalid && salario.dirty" maxlength="80" required>
+              
+            
+        </div>
+
+        <div class="d-grid gap-1 d-md-block mx-auto mt-2">
+            <button (click)="Salvar()"  [disabled]="formCliente.invalid" type="button" class="btn btn-primary"><i class="fad fa-save fs-2"></i> Salvar</button>
+        </div>
+    
+      </form>
+
+      {{cliente|json}}
+      
+    </div>
+</div>
+
+
+
+
