@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MsgService } from '../msg.service';
 
 @Component({
   selector: 'app-fornecedor',
@@ -9,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class FornecedorComponent {
 
+  constructor(private msg: MsgService){
+
+  }
+  ShowMe(){
+    this.msg.Sucesso();
+
+  }
 }

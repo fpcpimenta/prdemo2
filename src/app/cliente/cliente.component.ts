@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, RendererFactory2 } from '@angular/core';
 import { AbstractControlDirective, FormsModule } from '@angular/forms';
 import { ClienteDTO } from './clienteDTO';
 import { CommonModule, JsonPipe } from '@angular/common';
@@ -8,6 +8,9 @@ import { SwalComponent, SwalDirective, SweetAlert2LoaderService, SweetAlert2Modu
 
 import  Swal from 'sweetalert2';
 import { MsgService } from '../msg.service';
+import { MinhaapiService } from '../minhaapi.service';
+import { HttpClient } from '@angular/common/http';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-cliente',
@@ -20,16 +23,25 @@ export class ClienteComponent {
 
   public cliente: ClienteDTO = new ClienteDTO();
 
-  constructor(private msg: MsgService){
+  constructor(private wwwww: MsgService, private api: MinhaapiService){
    this.cliente.nome = "teste";
   }
 
 
   Salvar(){
-    console.log(this.cliente);
-    this.msg.Sucesso();
-   
+    //console.log(this.cliente);
+
+    this.api.Gravar(this.cliente.cep).then((ret=>{
+      console.log(ret);
+
+    }));
+
+    this.api._gravarCEP2(this.cliente.cep).then((ret=>{
+      
+      
+
+    }));
+
+  //private onErro(e: any){  }
   }
-
-
 }

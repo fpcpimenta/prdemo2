@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideEnvironmentNgxMask } from 'ngx-mask';
 import { NgxCurrencyInputMode, provideEnvironmentNgxCurrency } from 'ngx-currency';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
@@ -25,7 +26,7 @@ export const appConfig: ApplicationConfig = {
       inputMode: NgxCurrencyInputMode.Financial,
     }),
     provideAnimations(),
-    
+    provideHttpClient()
   
   ]
 };

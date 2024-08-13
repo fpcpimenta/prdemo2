@@ -26,6 +26,15 @@
         </div>
 
         <div class="col-md-8">
+          <label class="form-label fw-bolder">CEP<span class="text-danger fw-bolder">*</span>:</label>
+          
+            <input type="text" mask="00000-000" #cep="ngModel"  name="cep" [(ngModel)]="cliente.cep"
+              class="form-control" [class.is-invalid]="cep.invalid && cep.dirty" maxlength="80" required>
+            
+          
+      </div>
+
+        <div class="col-md-8">
             <label class="form-label fw-bolder">Salario<span class="text-danger fw-bolder">*</span>:</label>
             
               <input type="text" currencyMask #salario="ngModel"  name="salario" [(ngModel)]="cliente.salario"
